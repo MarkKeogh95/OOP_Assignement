@@ -176,6 +176,7 @@ void draw()
   {
     case 1:
     {
+
       //Calls the bargraph
       drawSuperBowlBars();  
       break;
@@ -183,6 +184,8 @@ void draw()
     
     case 2:
     {
+      textSize(12);
+      
       //Calls the piechart
        SuperBowlPie();
        break; 
@@ -190,6 +193,7 @@ void draw()
     
     default:
     {
+      textAlign(LEFT);
       background(0);
       stroke(255);
       line(0, 350, 1000, 350);
