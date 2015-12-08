@@ -1,4 +1,5 @@
-
+import controlP5.*;    // import controlP5 library
+ControlP5 cP5;
 ArrayList<SuperBowl> stats = new ArrayList<SuperBowl>();
 //sets the border
 float border = 40 ;
@@ -7,14 +8,36 @@ int mode = 0;
 void setup()
 {
    size(1000,700); 
-   //cp5 = new ControlP5(this);
    centX = width*0.5f;
    centY = height*0.5f;
-   
+   cP5 = new ControlP5(this);
+   cP5.addButton("Bargraph")
+      .setValue(1)
+      .setPosition(70,10)
+      .setSize(60,20);
+      
+   cP5.addButton("Piechart")
+      .setValue(2)
+      .setPosition(130,10)
+      .setSize(60,20);
    //Calls stats
    loadStats();
 }
 
+/*void controlEvent(ControlEvent theEvent)
+{
+  if(theEvent.isController()) 
+  { 
+    if(theEvent.controller().name()=="Bargraph");
+    {
+      drawSuperBowlBars();
+    }
+    if(theEvent.controller().name()=="Piechart");
+    {
+      SuperBowlPie();
+    }
+  }
+}*/
 
 
 void loadStats()
@@ -185,6 +208,7 @@ void draw()
   
   
 }//end draw
+
 
 //allows program to know what key is pressed
 void keyPressed()
